@@ -16,6 +16,7 @@ $(document).ready(function () {
       }, 1000);
       return;
     }
+    counterRunning = false;
     if (myTimerInterval) {
       clearInterval(myTimerInterval);
     }
