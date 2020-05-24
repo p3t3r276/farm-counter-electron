@@ -7,14 +7,14 @@ const { app, BrowserWindow } = electron;
 let mainWindow;
 
 // Listen for app to be ready
-app.on("ready", function() {
-  mainWindow = new BrowserWindow({});
+app.on("ready", function () {
+  mainWindow = new BrowserWindow({ frame: false });
 
   mainWindow.loadURL(
     url.format({
       pathname: path.join(__dirname, "mainWindow.html"),
       protocol: "file",
-      slashes: true
+      slashes: true,
     })
   );
 });
