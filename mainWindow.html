@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,intial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
     <title>Farm counter</title>
   </head>
   <body>
@@ -14,12 +14,31 @@
         <p>Run: #3</p>
       </div>
       <div>
-        <h5>Timer: 00:00:31</h5>
-        <button class="btn btn-success">Start/stop timer</button>
-        <button class="btn btn-danger">Reset</button>
+        <h5>Timer: <span id="timer"></span></h5>
+        <button class="btn btn-success" id="btnStartTimer">
+          Start/stop timer
+        </button>
+        <button class="btn btn-danger" id="btnReset">Reset</button>
       </div>
     </div>
 
-    <script src="js/bootstrap.min.js"></script>
+    <!-- Insert this line above script imports  -->
+    <script>
+      if (typeof module === "object") {
+        window.module = module;
+        module = undefined;
+      }
+    </script>
+
+    <script src="vendor/jquery/jquery-3.5.1.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/timer.js"></script>
+
+    <!-- Insert this line after script imports -->
+    <script>
+      if (window.module) module = window.module;
+    </script>
   </body>
 </html>

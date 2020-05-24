@@ -6,9 +6,16 @@ const { app, BrowserWindow } = electron;
 
 let mainWindow;
 
+let config = {
+  frame: process.env.NODE_ENV !== "production" ? true : false,
+  webPreferences: {
+    nodeIntegration: true,
+  },
+};
+
 // Listen for app to be ready
 app.on("ready", function () {
-  mainWindow = new BrowserWindow({ frame: false });
+  mainWindow = new BrowserWindow(config);
 
   mainWindow.loadURL(
     url.format({
