@@ -4,24 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
-    <title>Farm counter</title>
+    <title>Set Farm</title>
   </head>
   <body>
     <div class="container">
-      <h1>Farm counter</h1>
-      <div>
-        <h5>Farming: PlaugeBearer</h5>
-        <p>Run: #3</p>
-        <button class="btn btn-light" id="setFarm">Set Farm</button>
-        <button class="btn btn-danger" id="resetFarm">Reset farming</button>
-      </div>
-      <div>
-        <h5>Timer: <span id="timer"></span></h5>
-        <button class="btn btn-success" id="btnStartTimer">
-          Start timer / Pause
-        </button>
-        <button class="btn btn-danger" id="btnReset">Reset</button>
-      </div>
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="itemName">Item name: </label>
+          <input type="text" class="form-control" id="itemName" value="" />
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      </form>
     </div>
 
     <!-- Insert this line above script imports  -->
@@ -35,9 +28,6 @@
     <script src="vendor/jquery/jquery-3.5.1.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript" src="js/farmCounter.js"></script>
-    <script type="text/javascript" src="js/timer.js"></script>
 
     <!-- Insert this line after script imports -->
     <script>
