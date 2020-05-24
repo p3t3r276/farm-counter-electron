@@ -10,18 +10,37 @@ $(document).ready(function () {
   $("#btnStartTimer").on("click", function (e) {
     if (!counterRunning) {
       counterRunning = true;
-      myTimerInterval = setInterval(() => {
-        counter++;
-        showTimer(counter);
-      }, 1000);
+      startTimer();
       return;
     }
-    counterRunning = false;
-    if (myTimerInterval) {
-      clearInterval(myTimerInterval);
-    }
+
+    stopTimer();
+  });
+
+  $("#btnReset").on("click", function (e) {
+    resetTimer();
   });
 });
+
+function startTimer() {
+  myTimerInterval = setInterval(() => {
+    counter++;
+    showTimer(counter);
+  }, 1000);
+}
+
+function stopTimer() {
+  counterRunning = false;
+  if (myTimerInterval) {
+    clearInterval(myTimerInterval);
+  }
+}
+
+function resetTimer() {
+  stopTimer();
+  counter = 0;
+  showTimer(counter);
+}
 
 function showTimer(timerAsSecond) {
   let hour = Math.floor(timerAsSecond / 3600);
