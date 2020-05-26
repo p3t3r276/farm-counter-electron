@@ -2,15 +2,25 @@
   "name": "farm-counter-electron",
   "version": "1.0.0",
   "description": "",
+  "author": "Khoa",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build:windows": "electron-builder build"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "build": {
+    "appId": "com.farmcounter.khoa",
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
   "devDependencies": {
-    "electron": "^9.0.0"
+    "electron": "^9.0.0",
+    "electron-builder": "^22.6.1"
   }
 }
